@@ -4,11 +4,16 @@ Arraylist game:
 
 Game:
   Attributes:
-        private player Player; --composition
+        private Player player; --composition
+        private Ball ball; --compositon
+        private ArrayList<Stars> stars; --compositiom
+        private ArrayList<ColorSwitches> colorswitches; --composition
+        private ArrayList<Obstacles> obstacles; --compositon
         private Gameobjects gameobjects; --composition
+        
   Methods:
         setupGame();
-        increasedifficulty();
+        increaseifficulty();
         pausegame();
         savegame();
         newgame();
@@ -23,15 +28,7 @@ Player:
     private int score; //stars collected is score 
   Methods:
     getScore();   output button required on gameplay screen 
-    
-    
-    ///and we have the interrupts, I guess part of GUI maybe?
-     
-    void pauseGame(); button required on gameplay screen 
-          after pausing the game the ollowing should be invoked .  
-    void restartGame();
-    void saveGame(); # 
-
+    raiseInterrupts();
 
 
 
@@ -54,7 +51,7 @@ they appear? )
 
 ## maybe using random and after every shuffle increase the speed by some factor?!!!
 
-      Arraylist<Stars> startsarraylst;
+      Arraylist<Stars>startsarraylst;
       Arraylist<ColourSwitches>colourswitches;  
       Arraylist<Obstacles>obstaclesarraylist;
      
@@ -82,7 +79,7 @@ class ColourSwitches extends gameobjects --inheritance
       void eventOccur(); /// change the colour of the ball
       int getRadius();
 
-abstract class obstacles extends gameobjects:
+abstract class obstacles extends gameobjects: --inheritance
     Attributes:
       protected float rotation_speed;
       protected float posx;
@@ -91,11 +88,10 @@ abstract class obstacles extends gameobjects:
       public float getSpeed();
       public float getposx();
       public float getposy();
-      
       abstract void eventOccur(); ///destroy the ball or let the ball pass through
 ##depending on the color match . there should be fucn to decide that ball moves further or gets destroyed 
 
-class Circularobs extends obstacles:
+class Circularobs extends obstacles: inheritance
     Attribute:
       private float radius; ///maybe
     Methods:
@@ -103,7 +99,7 @@ class Circularobs extends obstacles:
       void setRadius();
       void eventOccur();
 
-class Triangularobs extends obstacles:
+class Triangularobs extends obstacles: --inheritance 
     Attribute:
       private float halflength;
     Methods:
@@ -111,7 +107,7 @@ class Triangularobs extends obstacles:
       void sethalflength();
       void eventOccur();
 
-class Squareobs extends obstacles:
+class Squareobs extends obstacles: --inheritance 
     Attribute:
       private float sidelen;
 
@@ -121,7 +117,7 @@ class Squareobs extends obstacles:
       void eventOccur();
 
 
-class Linelikeobs extends obstacles:
+class Linelikeobs extends obstacles: --inheritance
     Attributes:
       private float linelength;
     Methods:
@@ -133,8 +129,8 @@ class Ball:
   Attribute:
     private String color;
     private float posY;
-    private int status
-private float posx = constant ;
+    private int status;  
+    private float posx = constant ;
      
   Methods:
     void setColor();
