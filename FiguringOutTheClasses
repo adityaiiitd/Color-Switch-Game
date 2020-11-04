@@ -10,8 +10,10 @@ Game:
         private ArrayList<ColorSwitches> colorswitches; --composition
         private ArrayList<Obstacles> obstacles; --compositon
         private Gameobjects gameobjects; --composition
+        private int gameStatus;
         
   Methods:
+        getStatus();
         setupGame();
         increaseifficulty();
         pausegame();
@@ -58,8 +60,8 @@ they appear? )
     Methods: (guessing some method overriding maybe? Since its an infinite game no need of rendering every object I suppose)
 
 ## not clear about this part tho 
-      makeAppear();   
-      makeDisappear();   
+      makeAppear();
+      makeDisappear();  
 
 
 
@@ -67,7 +69,7 @@ class Stars extends gameobjects; --inheritance
     Attributes:
       private int size;
     Methods:
-      void eventOccur(); /// increment the score by 1
+      void eventOccur(PLayer p); /// increment the score by 1 -Dependency with Player
       int getSize();
 
 class ColourSwitches extends gameobjects --inheritance
@@ -76,20 +78,19 @@ class ColourSwitches extends gameobjects --inheritance
       private float rotationSpeed;
     Methods:
       void setRotationSpeed();   
-      void eventOccur(); /// change the colour of the ball
+      void eventOccur(Ball b); ///change the colour of the ball --Dependency with Ball
       int getRadius();
 
-abstract class obstacles extends gameobjects: --inheritance
+
+class obstacles extends gameobjects: --inheritance
     Attributes:
-      protected float rotation_speed;
-      protected float posx;
-      protected float posy;
+      private float rotation_speed;
+      private float posx;
+      private float posy;
     Methods:
       public float getSpeed();
       public float getposx();
       public float getposy();
-      abstract void eventOccur(); ///destroy the ball or let the ball pass through
-##depending on the color match . there should be fucn to decide that ball moves further or gets destroyed 
 
 class Circularobs extends obstacles: inheritance
     Attribute:
@@ -129,9 +130,8 @@ class Ball:
   Attribute:
     private String color;
     private float posY;
-    private int status;  
     private float posx = constant ;
-     
+    priavte int status;
   Methods:
     void setColor();
     void setPosY();
