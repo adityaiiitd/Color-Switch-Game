@@ -4,11 +4,11 @@ Arraylist game:
 
 Game:
   Attributes:
-private player Player;
-private Ball ball ;
-private ArrayList obstacles; my generic list 
+    private player Player;
+    private Ball ball ;
+    private ArrayList<obstacles>obs
+    private Arraylist<stars>starslst;
 
-    Arraylist<Player>userList; generic list 
    
      
   #game knows about all the classes  . can establish a relationship  : 
