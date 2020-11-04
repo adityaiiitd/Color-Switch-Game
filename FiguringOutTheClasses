@@ -4,30 +4,22 @@ Arraylist game:
 
 Game:
   Attributes:
-    private player Player;
-    private Ball ball ;
-    private ArrayList<obstacles>obs
-    private Arraylist<stars>starslst;
-
-   
-     
-  #game knows about all the classes  . can establish a relationship  : 
-     Methods:
-    doWhatUserSays(); {which maybe startGame(),loadGame(),exit() through menu}
+        private player Player; --composition
+        private Gameobjects gameobjects; --composition
   Methods:
-    newgame();
-    loadgame();
-    exit();
+        increasedifficulty();
+        pausegame();
+        savegame();
+        newgame();
+        loadgame();
+        exit();
 
-     
-Menu:(GUI)
-  buttons 
    
 
 Player:
   Attributes:? such as ? the player list 
-    private Ball ball; //knows about the ball
-    private int score; //stars collected is score
+    private Ball ball; //knows about the ball --(association)
+    private int score; //stars collected is score 
   Methods:
     getScore();   output button required on gameplay screen 
     ///and we have the interrupts 
