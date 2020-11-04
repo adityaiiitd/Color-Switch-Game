@@ -130,6 +130,9 @@ class Ball:
         private String color;
         private float posY;
         private int status;
+        private float posX = const; //set it to center and don't provide setter I guess.
+          
+  
         
     Methods:
         void setColor();
