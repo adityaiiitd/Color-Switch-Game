@@ -84,12 +84,14 @@ class ColourSwitches extends gameobjects --inheritance
 
 abstract class obstacles extends gameobjects:
     Attributes:
-      private float rotation_speed;
-      private float posx;
-      private float posy;
+      protected float rotation_speed;
+      protected float posx;
+      protected float posy;
     Methods:
-
-      default void setRotationSpeed();
+      public float getSpeed();
+      public float getposx();
+      public float getposy();
+      
       abstract void eventOccur(); ///destroy the ball or let the ball pass through
 ##depending on the color match . there should be fucn to decide that ball moves further or gets destroyed 
 
