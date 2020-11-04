@@ -16,11 +16,7 @@ Game:
         getStatus();
         setupGame();
         increaseifficulty();
-        pausegame();
-        savegame();
-        newgame();
-        loadgame();
-        exit();
+
 
    
 
