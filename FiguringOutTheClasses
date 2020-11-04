@@ -6,27 +6,17 @@ Color-Switch-Game classes extracts:
 
 class Game
     Attributes:
-        Arraylist<Player>userList;
-        private Menu menu;
+        private Arraylist<Player> player; --guessing a composition maybe
+        private Gameobjects gameobjects; -- similarly a compositon here aswell
         
     Methods:
         doWhatUserSays(); {which maybe startGame(),loadGame(),exit() through menu}
         
 
-        
-class Menu
-    Attributes: 
-        ??
-    
-    Methods:
-        newgame();
-        loadgame();
-        exit();
-
 class Player
     Attributes:
-        private Ball ball; //knows about the ball
-        private int score; //stars collected is score
+        private Ball ball; //knows about the ball -- create assoication single way
+        private int score; //stars collected is score 
     Methods:
         getScore();
         ///and we have the interrupts 
@@ -51,15 +41,13 @@ class Constants
 class GameObjects
         Attributes: (creating maybe a list and then changing order or speed with which 
 they appear? )
-            Arraylist<Stars> startsarraylst;    
-            Arraylist<ColourSwitches>colourswitches;
-            Arraylist<Obstacles>obstaclesarraylist;
+            private Arraylist<Stars> startsarraylst;    
+            private Arraylist<ColourSwitches>colourswitches;
+            private Arraylist<Obstacles>obstaclesarraylist;
         
         Methods: (guessing some method overriding maybe? Since its an infinite game no need of rendering every object I suppose)
             makeAppear();    
             makeDisappear();    
-
-
 
 class Stars
         Attributes:
