@@ -16,13 +16,16 @@ Game:
         getStatus();
         setupGame();
         increaseifficulty();
+        getGamestatus();
+        
 
 Player:
-  Attributes:? such as ? the player list 
-    private Ball ball; //knows about the ball --(association)
+  Attributes: 
+    private Ball myball; //knows about the ball --(association)
     private int score; //stars collected is score 
   Methods:
     int getScore();  
+    
 
 
 Static class Constants:
@@ -31,12 +34,42 @@ Static class Constants:
   Methods:
     int getGravity();
 
+
+
+class Gameobjects:
+      Attributes:
+         private Arraylist<Obstacles> obstacles;
+         private Arraylist<ColorSwitches> color'
+         private Arraylist<Stars>starslst;
+     
+     Methods:
+         getObstacles();
+         getColorSwitches();
+         getStars();
+         copyState();
+
+
+
 class Stars:
     Attributes:
       private int size = const;
     Methods:
       int getSize();
       void eventOccur(Player p); /// increment the score by 1 -Dependency with Player
+
+
+
+class Ball:
+  Attribute:
+    private String color;
+    private float posY;
+    private float posx = constant ;
+  Methods:
+    void setColor();
+    void setPosY();
+    float getPosx();
+    float getPosy();
+
 
 
 class ColourSwitches:
@@ -96,14 +129,4 @@ class Linelikeobs extends obstacles: (inheritance)
       void setLinelength();
       void eventOccur();
 
-class Ball:
-  Attribute:
-    private String color;
-    private float posY;
-    private float posx = constant ;
-  Methods:
-    void setColor();
-    void setPosY();
-    float getPosx();
-    float getPosy();
 
