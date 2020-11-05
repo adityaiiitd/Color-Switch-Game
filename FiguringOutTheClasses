@@ -1,6 +1,7 @@
 Color-Switch-Game classes extracts:
 Main class:
-Arraylist game:
+   Arraylist<Game> gamesArraylist:
+   
 
 Game:
   Attributes:
@@ -9,7 +10,6 @@ Game:
         private ArrayList<Stars> stars; --compositiom
         private ArrayList<ColorSwitches> colorswitches; --composition
         private ArrayList<Obstacles> obstacles; --compositon
-        private Gameobjects gameobjects; --composition
         private int gameStatus;
         
   Methods:
@@ -17,68 +17,40 @@ Game:
         setupGame();
         increaseifficulty();
 
-
-   
-
 Player:
   Attributes:? such as ? the player list 
     private Ball ball; //knows about the ball --(association)
     private int score; //stars collected is score 
   Methods:
-    getScore();   output button required on gameplay screen 
-    raiseInterrupts();
+    int getScore();  
 
 
-
-/// confused if to be added or not
-## i dont think  costants has to be a class . 
-## ball should be a class with these as attributes fixed or something
 Static class Constants:
   Attributes:
     private int gravity;
   Methods:
     int getGravity();
-///
 
-
-
-
-class GameObjects: 
-    Attributes: (creating maybe a list and then changing order or speed with which 
-they appear? ) 
-
-## maybe using random and after every shuffle increase the speed by some factor?!!!
-
-      Arraylist<Stars>startsarraylst;
-      Arraylist<ColourSwitches>colourswitches;  
-      Arraylist<Obstacles>obstaclesarraylist;
-     
-    Methods: (guessing some method overriding maybe? Since its an infinite game no need of rendering every object I suppose)
-
-## not clear about this part tho 
-      makeAppear();
-      makeDisappear();  
-
-
-
-class Stars extends gameobjects; --inheritance
+class Stars:
     Attributes:
-      private int size;
+      private int size = const;
     Methods:
-      void eventOccur(PLayer p); /// increment the score by 1 -Dependency with Player
       int getSize();
+      void eventOccur(Player p); /// increment the score by 1 -Dependency with Player
 
-class ColourSwitches extends gameobjects --inheritance
+
+class ColourSwitches:
     Attributes:
-      private int radius;
+      private int radius = const;
       private float rotationSpeed;
     Methods:
       void setRotationSpeed();   
       void eventOccur(Ball b); ///change the colour of the ball --Dependency with Ball
+      float getRotationSpeed();
       int getRadius();
 
 
-class obstacles extends gameobjects: --inheritance
+abstract class obstacles:
     Attributes:
       private float rotation_speed;
       private float posx;
@@ -87,16 +59,18 @@ class obstacles extends gameobjects: --inheritance
       public float getSpeed();
       public float getposx();
       public float getposy();
-
-class Circularobs extends obstacles: inheritance
+      abstract void eventOccur();
+      
+      
+class Circularobs extends obstacles: (inheritance)
     Attribute:
-      private float radius; ///maybe
+      private float radius;
     Methods:
       float getRadius();
       void setRadius();
       void eventOccur();
 
-class Triangularobs extends obstacles: --inheritance 
+class Triangularobs extends obstacles: (inheritance) 
     Attribute:
       private float halflength;
     Methods:
@@ -104,7 +78,7 @@ class Triangularobs extends obstacles: --inheritance
       void sethalflength();
       void eventOccur();
 
-class Squareobs extends obstacles: --inheritance 
+class Squareobs extends obstacles: (inheritance) 
     Attribute:
       private float sidelen;
 
@@ -114,7 +88,7 @@ class Squareobs extends obstacles: --inheritance
       void eventOccur();
 
 
-class Linelikeobs extends obstacles: --inheritance
+class Linelikeobs extends obstacles: (inheritance)
     Attributes:
       private float linelength;
     Methods:
@@ -127,9 +101,9 @@ class Ball:
     private String color;
     private float posY;
     private float posx = constant ;
-    priavte int status;
   Methods:
     void setColor();
     void setPosY();
-    void setStatus();
-    int getStatus();
+    float getPosx();
+    float getPosy();
+
